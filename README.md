@@ -5,6 +5,5 @@
 
 #### Isi Repository : 
 ```text
-.
-├──docker-compose.yaml
-├──userdata.env
+├── docker-compose.yaml
+├── userdata.env
