@@ -1,15 +1,30 @@
 services:
+
   db:
-    image: mariadb
-    restart: always
+    image: mariadb:latest
     environment:
       - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
       - MYSQL_DATABASE=${DB_NAME}
       - MYSQL_USER=${DB_USER}
       - MYSQL_PASSWORD=${DB_PASSWORD}
+    volumes:
+      - db-data:/var/lib/mysql
+    networks:
+      - tugas1docker
 
-  adminer:
-    image: adminer
-    restart: always
+  wp:
+    image: wordpress
     ports:
-      - 8080:8080
+      - "80:80"
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: ${WP_USER}
+      WORDPRESS_DB_PASSWORD: ${WP_PASSWORD}
+      WORDPRESS_DB_NAME: ${WP_NAME}
+    volumes:
+      - db-data:/var/www/html
+    networks:
+      - tugas1docker
+
+volumes:
+  db-data:
