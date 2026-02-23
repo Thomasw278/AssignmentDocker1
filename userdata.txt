@@ -15,6 +15,6 @@ mv docker-compose /usr/bin/docker-compose
 
 mkdir project1
 cd project1/
-wget https://raw.githubusercontent.com/Thomasw278/AssigmentDocker1/refs/heads/main/docker-compose.yaml docker-compose.yaml
+wget https://raw.githubusercontent.com/Thomasw278/AssignmentDocker1/refs/heads/main/docker-compose.yaml docker-compose.yaml
 aws s3 cp s3://docker-s3-compose/.env .
 docker-compose up
