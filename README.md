@@ -6,4 +6,6 @@
 #### Isi Repository : 
 ```text
 ├── docker-compose.yaml
-├── userdata.env
+├── .env
+├── nginx.conf
+├── userdata.txt
