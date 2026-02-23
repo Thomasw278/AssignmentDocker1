@@ -1,0 +1,20 @@
+#!/bin/bash
+
+yum update -y
+yum install -y docker
+systemctl start docker
+systemctl enable docker
+docker version
+usermod -aG docker ec2-user
+newgrp docker
+
+wget https://github.com/docker/compose/releases/download/v5.0.2/docker-compose-linux-x86_64
+chmod +x docker-compose-linux-x86_64
+mv docker-compose-linux-x86_64 docker-compose
+mv docker-compose /usr/bin/docker-compose
+
+mkdir project1
+cd project1/
+wget https://raw.githubusercontent.com/Thomasw278/AssigmentDocker1/refs/heads/main/docker-compose.yaml docker-compose.yaml
+wget https://raw.githubusercontent.com/Thomasw278/AssigmentDocker1/refs/heads/main/userdata.env .env
+docker-compose up
