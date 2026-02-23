@@ -4,5 +4,7 @@
 - 71230988 - Calvin Putra Susanto
 
 #### Isi Repository : 
-|-- docker-compose.yaml
-|-- data.env
+```text
+.
+├──docker-compose.yaml
+├──userdata.env
