@@ -35,7 +35,7 @@ services:
       - tugas1docker
   
   pma:
-    image: phpmyadmi
+    image: phpmyadmin
     environment:
       PMA_HOST: db
       PMA_ARBITRARY: 1
