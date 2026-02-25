@@ -38,6 +38,7 @@ services:
     image: phpmyadmin
     environment:
       PMA_HOST: db
+      PMA_ABSOLUTE_URI: /pma/
       PMA_ARBITRARY: 1
     networks:
       - tugas1docker
